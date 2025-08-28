@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Archie — AI Voice Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="bg-[#0b0f14] text-white antialiased" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji','Segoe UI Emoji'">
+    <!-- Radial glow background -->
+    <div class="pointer-events-none fixed inset-0 overflow-hidden">
+      <div class="absolute -top-1/3 left-1/2 -translate-x-1/2 w-[120vw] h-[120vw] rounded-full bg-[radial-gradient(closest-side,rgba(255,214,0,0.12),transparent_65%)]"></div>
+      <div class="absolute -bottom-1/2 right-1/3 w-[90vw] h-[90vw] rounded-full bg-[radial-gradient(closest-side,rgba(56,189,248,0.12),transparent_65%)]"></div>
+    </div>
+
+    <!-- Nav -->
+    <header class="relative z-10">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="h-7 w-7 rounded-lg bg-gradient-to-tr from-amber-400 via-yellow-400 to-cyan-400 p-[1px]">
+            <div class="h-full w-full rounded-lg bg-[#0b0f14] grid place-items-center">
+              <i data-lucide="mic" class="h-4 w-4 text-amber-300"></i>
+            </div>
+          </div>
+          <span class="text-lg font-semibold tracking-tight">Archie</span>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-7 text-sm text-slate-300">
+          <a href="#features" class="hover:text-white transition">Features</a>
+          <a href="#preview" class="hover:text-white transition">Preview</a>
+          <a href="#download" class="hover:text-white transition">Download</a>
+        </nav>
+
+        <a href="https://apps.apple.com/us/app/archie-1-ai-voice-journal/id6747934094" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-white/10 hover:bg-white/15 transition text-sm px-4 py-2">
+          <i data-lucide="apple" class="h-4 w-4"></i>
+          <span class="font-medium">App Store</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative z-10">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
+        <div class="max-w-xl">
+          <div class="inline-flex items-center gap-2 rounded-full bg-white/5 ring-1 ring-white/10 px-3 py-1.5 mb-6">
+            <span class="h-2 w-2 rounded-full bg-amber-400"></span>
+            <span class="text-xs text-slate-300">Voice-first journaling</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05]">
+            Speak. Reflect. Grow.
+          </h1>
+          <p class="mt-5 text-slate-300/90 leading-relaxed">
+            Capture thoughts hands‑free, organize insights automatically, and revisit your journey with clarity.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <a id="download" href="https://apps.apple.com/us/app/archie-1-ai-voice-journal/id6747934094" target="_blank" rel="noopener"
+               class="group inline-flex items-center justify-center gap-3 rounded-2xl px-5 py-3 bg-gradient-to-tr from-amber-400 via-yellow-400 to-cyan-400 text-black font-medium">
+              <i data-lucide="apple" class="h-5 w-5"></i>
+              <span>Get on the App Store</span>
+              <i data-lucide="arrow-up-right" class="h-5 w-5 transition -translate-y-px group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+            </a>
+
+            <button id="triggerUpload" class="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 ring-1 ring-white/15 bg-white/5 hover:bg-white/10 transition font-medium">
+              <i data-lucide="image" class="h-5 w-5 text-slate-200"></i>
+              <span>Swap screenshot</span>
+            </button>
+          </div>
+
+          <!-- Gradient border callout -->
+          <div class="mt-6 p-[1px] rounded-2xl bg-[conic-gradient(at_0%_0%,#fde047_0deg,#22d3ee_120deg,#a78bfa_240deg,#fde047_360deg)]">
+            <div class="rounded-2xl bg-[#0b0f14]/90 px-4 py-3 flex items-center gap-3">
+              <i data-lucide="sparkles" class="h-4 w-4 text-amber-300"></i>
+              <p class="text-sm text-slate-300">Premium feel with a soft gradient border that matches your brand.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mockup with gradient border -->
+        <div id="preview" class="relative">
+          <!-- decorative gradient ring -->
+          <div class="absolute -inset-6 blur-3xl opacity-50 bg-[conic-gradient(at_20%_10%,#fde047_0deg,#22d3ee_120deg,#a78bfa_240deg,#fde047_360deg)] rounded-[2.2rem]"></div>
+
+          <div class="relative mx-auto max-w-sm w-full">
+            <div class="rounded-[2rem] p-[2px] bg-[linear-gradient(140deg,rgba(253,224,71,0.55),rgba(14,165,233,0.4),rgba(168,85,247,0.35))]">
+              <div class="rounded-[1.9rem] overflow-hidden bg-[#0a0f14] ring-1 ring-white/10">
+                <img
+                  class="js-mockup block w-full h-auto"
+                  alt="Archie app screenshot"
+                  src="https://images.unsplash.com/photo-1620042325597-39cfd8f7ad64?q=80&w=1200&auto=format&fit=crop" />
+              </div>
+            </div>
+            <!-- subtle descriptor -->
+            <p class="mt-3 text-center text-xs text-slate-400">Drop your screenshot to replace this preview.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="relative z-10">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="p-[1px] rounded-2xl bg-gradient-to-tr from-amber-400/40 via-yellow-300/10 to-cyan-400/40">
+            <div class="rounded-2xl bg-[#0b0f14] p-6 ring-1 ring-white/10 h-full">
+              <div class="h-10 w-10 rounded-xl bg-white/5 grid place-items-center mb-4">
+                <i data-lucide="mic" class="h-5 w-5 text-amber-300"></i>
+              </div>
+              <h3 class="text-lg font-semibold tracking-tight">Hands‑free capture</h3>
+              <p class="mt-2 text-sm text-slate-300">Tap to speak. Your ideas are transcribed and organized instantly.</p>
+            </div>
+          </div>
+
+          <div class="p-[1px] rounded-2xl bg-gradient-to-tr from-cyan-400/40 via-sky-300/10 to-violet-400/40">
+            <div class="rounded-2xl bg-[#0b0f14] p-6 ring-1 ring-white/10 h-full">
+              <div class="h-10 w-10 rounded-xl bg-white/5 grid place-items-center mb-4">
+                <i data-lucide="book-open" class="h-5 w-5 text-cyan-300"></i>
+              </div>
+              <h3 class="text-lg font-semibold tracking-tight">Structured memory</h3>
+              <p class="mt-2 text-sm text-slate-300">Topics, tags, and summaries help you find the right moment fast.</p>
+            </div>
+          </div>
+
+          <div class="p-[1px] rounded-2xl bg-gradient-to-tr from-violet-400/40 via-fuchsia-300/10 to-amber-400/40">
+            <div class="rounded-2xl bg-[#0b0f14] p-6 ring-1 ring-white/10 h-full">
+              <div class="h-10 w-10 rounded-xl bg-white/5 grid place-items-center mb-4">
+                <i data-lucide="line-chart" class="h-5 w-5 text-violet-300"></i>
+              </div>
+              <h3 class="text-lg font-semibold tracking-tight">Progress over time</h3>
+              <p class="mt-2 text-sm text-slate-300">See patterns in mood and topics as your journal grows.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secondary preview with gradient border -->
+    <section class="relative z-10">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="order-2 lg:order-1">
+            <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">A focused canvas for your thoughts</h2>
+            <p class="mt-4 text-slate-300/90">The interface reduces friction so you can speak first and organize later. The subtle glow and contrast keep attention on your words.</p>
+            <ul class="mt-6 space-y-3 text-sm text-slate-300">
+              <li class="flex items-start gap-3"><i data-lucide="shield" class="h-4 w-4 text-emerald-300 mt-0.5"></i> Private by default</li>
+              <li class="flex items-start gap-3"><i data-lucide="folder-tree" class="h-4 w-4 text-cyan-300 mt-0.5"></i> Smart topic clustering</li>
+              <li class="flex items-start gap-3"><i data-lucide="wand-2" class="h-4 w-4 text-amber-300 mt-0.5"></i> One‑tap prompts</li>
+            </ul>
+          </div>
+
+          <div class="order-1 lg:order-2">
+            <div class="relative mx-auto max-w-md">
+              <div class="absolute -inset-8 blur-3xl opacity-50 bg-[conic-gradient(at_20%_10%,#fde047_0deg,#22d3ee_120deg,#a78bfa_240deg,#fde047_360deg)] rounded-[2rem]"></div>
+              <div class="relative rounded-[2rem] p-[2px] bg-[linear-gradient(140deg,rgba(253,224,71,0.55),rgba(14,165,233,0.4),rgba(168,85,247,0.35))]">
+                <div class="rounded-[1.9rem] overflow-hidden bg-[#0a0f14] ring-1 ring-white/10">
+                  <img class="js-mockup block w-full h-auto" alt="Archie app screenshot secondary"
+                       src="https://images.unsplash.com/photo-1620042325597-39cfd8f7ad64?q=80&w=1200&auto=format&fit=crop" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section class="relative z-10" id="download">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+        <div class="p-[1px] rounded-3xl bg-[conic-gradient(at_0%_0%,#fde047_0deg,#22d3ee_120deg,#a78bfa_240deg,#fde047_360deg)]">
+          <div class="rounded-3xl bg-[#0b0f14] px-6 py-8 md:px-10 md:py-10 flex flex-col md:flex-row items-center justify-between gap-6 ring-1 ring-white/10">
+            <div>
+              <h3 class="text-2xl md:text-3xl font-semibold tracking-tight">Start journaling in seconds</h3>
+              <p class="mt-2 text-slate-300">Install the app and capture your first entry today.</p>
+            </div>
+            <a href="https://apps.apple.com/us/app/archie-1-ai-voice-journal/id6747934094" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-3 rounded-2xl px-5 py-3 bg-white text-black font-medium">
+              <i data-lucide="apple" class="h-5 w-5"></i>
+              <span>Download on the App Store</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hidden file input for swapping screenshot -->
+    <input id="screenshotInput" type="file" accept="image/*" class="hidden" />
+
+    <footer class="relative z-10 border-t border-white/10">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 flex justify-between items-center text-sm text-slate-400">
+        <span>© <span id="year"></span> Archie</span>
+        <div class="flex items-center gap-5">
+          <a href="https://apps.apple.com/us/app/archie-1-ai-voice-journal/id6747934094" target="_blank" rel="noopener" class="hover:text-white transition">App Store</a>
+          <a href="#features" class="hover:text-white transition">Features</a>
+          <a href="#preview" class="hover:text-white transition">Preview</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Icons
+      lucide.createIcons();
+
+      // Current year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Swap screenshot logic
+      const input = document.getElementById('screenshotInput');
+      const trigger = document.getElementById('triggerUpload');
+      const targets = document.querySelectorAll('.js-mockup');
+
+      trigger.addEventListener('click', () => input.click());
+
+      input.addEventListener('change', (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file) return;
+        const url = URL.createObjectURL(file);
+        targets.forEach((img) => (img.src = url));
+      });
+
+      // Optional: allow drag & drop anywhere on page to update screenshots
+      let dragCounter = 0;
+      const body = document.body;
+      const onDrag = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+      };
+      ['dragenter','dragover'].forEach(evt => body.addEventListener(evt, (e) => {
+        onDrag(e);
+        dragCounter++;
+        body.classList.add('outline-none');
+      }));
+      ['dragleave','drop'].forEach(evt => body.addEventListener(evt, (e) => {
+        onDrag(e);
+        dragCounter = Math.max(0, dragCounter - 1);
+        if (dragCounter === 0) body.classList.remove('outline-none');
+      }));
+      body.addEventListener('drop', (e) => {
+        const file = e.dataTransfer.files && e.dataTransfer.files[0];
+        if (!file) return;
+        const url = URL.createObjectURL(file);
+        targets.forEach((img) => (img.src = url));
+      });
+    </script>
+  </body>
+</html>
